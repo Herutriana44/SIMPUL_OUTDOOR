@@ -1,0 +1,1 @@
+Untuk mencegah kerentanan ini, sudah saya setting file .htaccess untuk memblokir siapa saja yang masuk ke dalam folder yang rentan untuk disusupi

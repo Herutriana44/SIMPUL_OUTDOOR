@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+#MENGHILAKAN FILE INDEX.PHP SAAT DIAKSES (CI)
+
+Options All -Indexes
+ErrorDocument 400 "http://localhost/KA19A1/E400" 
+ErrorDocument 401 "http://localhost/KA19A1/E401" 
+ErrorDocument 402 "http://localhost/KA19A1/E402" 
+ErrorDocument 403 "http://localhost/KA19A1/E403" 
+#Untuk direct ke page yang ingin direct
