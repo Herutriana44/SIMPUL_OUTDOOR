@@ -10,3 +10,7 @@ ErrorDocument 401 "http://localhost/simpul_outdoor/E401"
 ErrorDocument 402 "http://localhost/simpul_outdoor/E402" 
 ErrorDocument 403 "http://localhost/simpul_outdoor/E403" 
 #Untuk direct ke page yang ingin direct
+
+RewriteEngine on
+RewriteCond $1 !^(index\.php|images|assets|robots\.txt)
+RewriteRule ^(.*)$ /index.php/$1 [L]

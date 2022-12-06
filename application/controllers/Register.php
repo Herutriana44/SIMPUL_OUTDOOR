@@ -25,6 +25,9 @@ class Register extends CI_Controller {
         $iv = "519375018091750914109275921052194";
 
         // Mengambil data dari input di views register
+        $name = $this->input->post('fullname');
+        $alamat = $this->input->post('alamat');
+        $notlp = $this->input->post('notlp');
         $username = $this->input->post('username');
 		$password = $this->input->post('password');
 
@@ -33,7 +36,7 @@ class Register extends CI_Controller {
         $passwordChiper = openssl_encrypt($password, $cipher, $key, $options=0, $iv);
         
         // Ini untuk memasukkan data ke database
-        $this->m_data->register($usernameChiper,$passwordChiper);
+        $this->m_data->register($name,$alamat,$notlp,$usernameChiper,$passwordChiper);
 
         // lalu dilempar ke halaman Login Controller
         redirect('Login');

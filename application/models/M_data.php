@@ -8,9 +8,13 @@ class M_data extends CI_Model{
 	}	
 
 	// ini adalah fungsi untuk menambahkan data atau akun pada database
-	function register($username,$password)
+	function register($nama,$alamat,$telepon,$username,$password)
 	{
 		$data_user = array(
+			'id'=>NULL,
+			'nama'=>$nama,
+			'alamat'=>$alamat,
+			'telepon'=>$telepon,
 			'username'=>$username,
 			'password'=>$password
 		);
