@@ -34,9 +34,11 @@ class Register extends CI_Controller {
         // ini untuk proses enkripsi
         $usernameChiper = openssl_encrypt($username, $cipher, $key, $options=0, $iv);
         $passwordChiper = openssl_encrypt($password, $cipher, $key, $options=0, $iv);
-        
+        $alamatChiper = openssl_encrypt($alamat, $cipher, $key, $options=0, $iv);
+        $notlpChiper = openssl_encrypt($notlp, $cipher, $key, $options=0, $iv);
+        $nameChiper = openssl_encrypt($name, $cipher, $key, $options=0, $iv);
         // Ini untuk memasukkan data ke database
-        $this->m_data->register($name,$alamat,$notlp,$usernameChiper,$passwordChiper);
+        $this->m_data->register($nameChiper,$alamatChiper,$notlpChiper,$usernameChiper,$passwordChiper);
 
         // lalu dilempar ke halaman Login Controller
         redirect('Login');
