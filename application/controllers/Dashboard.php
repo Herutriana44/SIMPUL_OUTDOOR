@@ -5,6 +5,7 @@ class Dashboard extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
+		$this->load->model('m_data');
 	
 		// Cek session jika status session tidak sama dengan login maka akan dilempar ke halaman login views
 		if($this->session->userdata('status') != "login"){
@@ -13,7 +14,26 @@ class Dashboard extends CI_Controller {
 	}
 
 	function index(){
-		$this->load->view('dashboard');
+		$cipher = "AES-128-CTR";
+		$key = "skalnfkamgladmsaofaksfasmfkas";
+		$iv = "519375018091750914109275921052194";
+
+		$usernameFromSession = $this->session->userdata('username');
+
+		$where = array(
+			'username' => $usernameFromSession
+		);
+
+		$cek = $this->m_data->cek_login("akun",$where)->num_rows();
+		$res = $this->m_data->cek_login("akun",$where);
+		$nama = "";
+		if($cek > 0){
+			$nama = $res->row()->nama;
+			$name = openssl_decrypt($nama, $cipher, $key, $options=0, $iv);
+		}
+
+		$data['nama'] = $name;
+		$this->load->view('dashboard',$data=$data);
 	}
 	
 	/**

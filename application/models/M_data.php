@@ -20,4 +20,6 @@ class M_data extends CI_Model{
 		);
 		$this->db->insert('akun',$data_user);
 	}
+
+	
 }

@@ -26,7 +26,7 @@
     </style>
 </head>
 <body>
-    <h1>Selamat Datang ...</h1>
+    <h1>Selamat Datang <?php echo strval($nama); ?></h1>
     <button id="btn_logout" class="button-primary">
         Log out
     </button>
