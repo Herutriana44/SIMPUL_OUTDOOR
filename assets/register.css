@@ -1,0 +1,164 @@
+/* style css (reset) */
+* {box-sizing: border-box;}
+
+html, body {
+    height: 100%;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+/* style css */
+.register-card > h2 {
+    margin : 24px 12px;
+    font-size: 29px;
+    font-weight: 600;
+}
+
+.register-form {
+    width: 100%;
+    margin: 0;
+    display: grid;
+    gap: 16px;
+}
+
+.register-card {
+    width: 100%;
+    padding: 70px 30px 44px;
+    border-radius: 24px;
+    background: #ffffff;
+    text-align: center;
+}
+
+@media (width >= 500px) {
+    .register-card {
+        margin: 0;
+        width: 400px;
+    }
+}
+
+@keyframes pan {
+    100% { background-position: 15% 50%;}
+}
+
+body {
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0 24px;
+    background-image: url("mountain-bg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation :pan 27s infinite alternate linear;
+}
+
+@media (width >=500px) {
+    body{
+        padding: 0;
+    }
+}
+
+.register-form > a {color: #216ce7;}
+
+.register-form > input,
+.register-form > button {
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    border-radius: 8px;
+}
+
+.register-form > button {
+    width: 100%;
+    height: 56px;
+    border: 0;
+    background: #216ce7;
+    color: #f9f9f9;
+    font-weight: 600;
+}
+
+
+
+/* style css (reset) */
+* {box-sizing: border-box;}
+
+html, body {
+    height: 100%;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+/* style css */
+.register-card > h2 {
+    margin : 24px 12px;
+    font-size: 29px;
+    font-weight: 600;
+}
+
+.register-form {
+    width: 100%;
+    margin: 0;
+    display: grid;
+    gap: 16px;
+}
+
+.register-card {
+    width: 100%;
+    padding: 70px 30px 44px;
+    border-radius: 24px;
+    background: #ffffff;
+    text-align: center;
+}
+
+@media (width >= 500px) {
+    .register-card {
+        margin: 0;
+        width: 400px;
+    }
+}
+
+@keyframes pan {
+    100% { background-position: 15% 50%;}
+}
+
+body {
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0 24px;
+    background-image: url("mountain-bg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation :pan 27s infinite alternate linear;
+}
+
+@media (width >=500px) {
+    body{
+        padding: 0;
+    }
+}
+
+.register-form > a {color: #216ce7;}
+
+.register-form > input,
+.register-form > button {
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    border-radius: 8px;
+}
+
+.register-form > button {
+    width: 100%;
+    height: 56px;
+    border: 0;
+    background: #216ce7;
+    color: #f9f9f9;
+    font-weight: 600;
+}
+
+
+
