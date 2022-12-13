@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>login.css" media="all">
+  <link rel="stylesheet" type="text/css" href="<?php echo asset_url();?>login.css" media="all"/>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
             <a href="#">
                 Lupa Password?
             </a>
-            <input type="submit" value="Login">
+            <button>LOGIN</button>
             <!-- Halaman Pendaftaran--->
             <p>Belum punya akun ? <a href="<?php echo base_url('Register'); ?>">Daftar</a></p> 
         </form>
