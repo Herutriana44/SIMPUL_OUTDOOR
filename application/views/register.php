@@ -18,7 +18,7 @@
             <input type="text" placeholder="Nomor Telepon" id="notlp" name="notlp"/>
             <input type="text" placeholder="Email" id="username" name="username"/>
             <input type="password" placeholder="Password" id="password" name="password"/>
-            <input class="button" type="submit" value="Daftar">
+            <button>DAFTAR</button>
         </form>
     </div>
 </body>
