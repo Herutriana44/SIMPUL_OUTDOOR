@@ -5,19 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form pendaftaran simpul Outdoor</title>
-    <link rel="stylesheet" href="<?php echo asset_url();?>register.css">
+
+    <link rel="stylesheet" href="<?php echo asset_url();?>login.css">
 </head>
 <body>
     <!-- Ini Form Untuk Registrasi -->
-    <div class="register-card">
+    <div class="login-card">
         <h2>Form Pendaftaran Simpul Outdoor</h2>
-        <form class="register-form" action="<?php echo base_url('Register/registration'); ?>" method="post">
+        <form class="login-form" action="<?php echo base_url('Register/registration'); ?>" method="post">
             <input type="text" placeholder="Nama Lengkap" id="fullname" name="fullname"/>
             <input type="text" placeholder="Alamat Lengkap" id="alamat" name="alamat"/>
             <input type="text" placeholder="Nomor Telepon" id="notlp" name="notlp"/>
             <input type="text" placeholder="Email" id="username" name="username"/>
             <input type="password" placeholder="Password" id="password" name="password"/>
-            <input type="submit" value="Daftar">
+            <button>DAFTAR</button>
         </form>
+    </div>
 </body>
 </html>
