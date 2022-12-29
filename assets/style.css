@@ -1,0 +1,102 @@
+nav {
+  background-color: #FF0000;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.logo {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-links li a:hover {
+  color: #000;
+}
+
+.nav-links li button {
+  height: 80px;
+  background-color: #FF0000;
+  outline: none;
+  width: 150px;
+  transition: all 0.30s ease-in-out;
+  font: 20px 'Poppins', sans-serif;
+  border: 1px solid #FF0000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-links li button:hover {
+  background-color: #fff;
+  color: #FF0000;
+}
+
+.nav-links li button:active {
+  transform: translateY(4px);
+}
+
+.nav-links li button:focus {
+  outline: none;
+}
+
+.nav-links li button:disabled {
+  background-color: #ccc;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.nav-links li button:disabled:hover {
+  background-color: #ccc;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.nav-links li button:disabled:active {
+  transform: translateY(0px);
+}
+
+.nav-links li button:disabled:focus {
+  outline: none;
+}
+
+.nav-links li button:disabled:active {
+  transform: translateY(0px);
+}
+
+.nav-links li button:disabled:focus {
+  outline: none;
+}
+
+.nav-links li button:disabled:hover {
+  background-color: #ccc;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.nav-links li button:disabled:active {
+  transform: translateY(0px);
+}

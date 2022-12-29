@@ -8,18 +8,46 @@ class M_data extends CI_Model{
 	}	
 
 	// ini adalah fungsi untuk menambahkan data atau akun pada database
-	function register($nama,$alamat,$telepon,$username,$password)
+	function register($nama,$alamat,$telepon,$username,$password,$email)
 	{
 		$data_user = array(
-			'id'=>NULL,
+			'username'=>$username,
+			'password'=>$password,
 			'nama'=>$nama,
 			'alamat'=>$alamat,
-			'telepon'=>$telepon,
-			'username'=>$username,
-			'password'=>$password
+			'no_telp'=>$telepon,
+			'email'=>$email
 		);
 		$this->db->insert('akun',$data_user);
 	}
 
-	
+	function tampil_semua_produk()
+	{
+		$query = $this->db->query('SELECT * FROM produk');
+		return $query->result();
+	}
+
+	function get_produk($idproduk)
+	{
+		$query = $this->db->select('*')->from('produk')->where('id_produk',$idproduk)->get();
+		return $query->result();
+	}
+
+	function rental_produk($idproduk,$iduser,$tanggalpeminjaman,$tanggalpengembalian,$jumlah)
+	{
+		$data_rental = array(
+			'id_produk'=>$idproduk,
+			'username'=>$iduser,
+			'tanggal_peminjaman'=>$tanggalpeminjaman,
+			'tanggal_pengembalian'=>$tanggalpengembalian,
+			'jumlah'=>$jumlah
+		);
+		$this->db->query('CALL rental_produk('.$jumlah.',"'.$tanggalpeminjaman.'","'.$tanggalpengembalian.'","'.$idproduk.'","'.$iduser.'");');
+	}
+
+	function riwayat_rental($iduser)
+	{
+		$query = $this->db->query('CALL tampilkan_riwayat("'.$iduser.'");');
+		return $query->result();
+	}
 }

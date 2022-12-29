@@ -14,6 +14,7 @@ class Dashboard extends CI_Controller {
 	}
 
 	function index(){
+		error_reporting(E_ERROR | E_PARSE);
 		$cipher = "AES-128-CTR";
 		$key = "skalnfkamgladmsaofaksfasmfkas";
 		$iv = "519375018091750914109275921052194";
@@ -31,6 +32,9 @@ class Dashboard extends CI_Controller {
 			$nama = $res->row()->nama;
 			$name = openssl_decrypt($nama, $cipher, $key, $options=0, $iv);
 		}
+
+		$produk = $this->m_data->tampil_semua_produk();
+		$data['produk'] = $produk;
 
 		$data['nama'] = $name;
 		$this->load->view('dashboard',$data=$data);
