@@ -31,6 +31,23 @@
             <td>Rp. <?php echo number_format($r->harga_produk,0,',','.') ?></td>
             <td>Rp. <?php echo number_format($r->total_harga,0,',','.') ?></td>
             <td><?php echo $r->status_peminjaman ?></td>
+            <td>
+                <?php if($r->status_peminjaman == "Belum Dikonfirmasi"){ ?>
+                    <button id="bayar" class="btn btn-sm btn-danger">Bayar</button>
+                    <script>
+                        let bayar = document.getElementById('bayar');
+                        bayar.addEventListener('click', function(){
+                            window.location.href = "<?php echo base_url('uploadbayar?id_rental='.$r->id_rental) ?>";
+                        });
+                    </script>
+                <?php }elseif($r->status_peminjaman == "Sudah Dikonfirmasi"){ ?>
+                    <button class="btn btn-sm btn-success">Sudah Dikonfirmasi</button>
+                <?php }elseif($r->status_peminjaman == "Selesai"){ ?>
+                    <button class="btn btn-sm btn-success">Selesai</button>
+                <?php } ?>
+                <!-- hapus -->
+                <a id="hapus" name="hapus" href="<?php echo base_url('riwayat/hapus/'.$r->id_rental) ?>" class="btn btn-sm btn-danger">Hapus</a>
+            </td>
         </tr>
         <?php } ?>
     </table>

@@ -50,4 +50,29 @@ class M_data extends CI_Model{
 		$query = $this->db->query('CALL tampilkan_riwayat("'.$iduser.'");');
 		return $query->result();
 	}
+
+	function hapus_data($where,$table)
+	{
+		// hapus data
+		$this->db
+			->where
+			($where)
+			->delete($table);
+	}
+
+	function uploadImage($idrental,$image)
+	{
+		$data = array(
+			'gambar' => $image
+		);
+
+		$getData = $this->db->query('SELECT * FROM perentalan WHERE id_rental = '.$idrental.'');
+		$getData = $getData->result();
+		$idproduk = $getData[0]->id_produk;
+		$username = $getData[0]->username;
+		$tanggalpeminjaman = $getData[0]->tanggal_peminjaman;
+		$tanggalpengembalian = $getData[0]->tanggal_pengembalian;
+
+		$this->db->query('CALL upload_bayar('.$idrental.',"'.$image.'","'.$idproduk.'","'.$username.'","'.$tanggalpeminjaman.'","'.$tanggalpengembalian.'");');
+	}
 }

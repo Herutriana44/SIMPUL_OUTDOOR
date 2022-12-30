@@ -24,4 +24,11 @@ class Riwayat extends CI_Controller {
         $data['riwayat'] = $this->m_data->riwayat_rental($username);
         $this->load->view('riwayat',$data=$data);	
     }
+
+    public function hapus($id)
+    {
+        $where = array('id_rental' => $id);
+        $this->m_data->hapus_data($where,'perentalan');
+        redirect('riwayat');
+    }
 }

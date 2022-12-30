@@ -19,6 +19,7 @@ CREATE TABLE produk(
 );
 
 CREATE TABLE perentalan(
+    id_rental INT NOT NULL AUTO_INCREMENT,
     tanggal_peminjaman DATE NOT NULL,
     tanggal_pengembalian DATE NOT NULL,
     id_produk CHAR(30) NOT NULL,
@@ -26,7 +27,8 @@ CREATE TABLE perentalan(
     username VARCHAR(30) NOT NULL,
     status_peminjaman VARCHAR(30) NOT NULL,
     FOREIGN KEY (id_produk) REFERENCES produk(id_produk),
-    FOREIGN KEY (username) REFERENCES akun(username)
+    FOREIGN KEY (username) REFERENCES akun(username),
+    PRIMARY KEY (id_rental)
 );
 
 INSERT INTO produk VALUES('PRD001', 'Tenda Rei Kaps 4', 40000, '-', 'Tenda Rei Kaps 4.jpg',100);
@@ -54,10 +56,38 @@ INSERT INTO produk VALUES('PRD022', 'Kompor Outdoor', 10000, '-', 'Kompor.jpg',1
 INSERT INTO produk VALUES('PRD023', 'Gas', 135000, '-', 'Gas.jpg',100);
 INSERT INTO produk VALUES('PRD024', 'Gas Reffil', 140000, '-', 'Gas.jpg',100);
 
+CREATE TABLE upload_pembayaran(
+    id_produk CHAR(30) NOT NULL,
+    username VARCHAR(30) NOT NULL,
+    tanggal_peminjaman DATE NOT NULL,
+    tanggal_pengembalian DATE NOT NULL,
+    bukti_pembayaran VARCHAR(100) NOT NULL,
+    id_rental INT NOT NULL,
+    FOREIGN KEY (id_produk) REFERENCES produk(id_produk),
+    FOREIGN KEY (username) REFERENCES akun(username),
+    FOREIGN KEY (id_rental) REFERENCES perentalan(id_rental)
+);
+
+INSERT INTO upload_pembayaran VALUES('PRD001', 'admin', '2020-01-01', '2020-01-02', 'bukti_pembayaran.jpg', 1);
+
+CREATE VIEW view_pesanan AS
+SELECT produk.id_produk, akun.username, perentalan.tanggal_peminjaman, perentalan.tanggal_pengembalian, perentalan.id_rental 
+FROM produk
+JOIN perentalan ON perentalan.id_produk = produk.id_produk
+JOIN akun ON akun.username = perentalan.username;
+
+DELIMITER $$
+CREATE PROCEDURE upload_bayar(id_rental INT, bukti_pembayaran VARCHAR(100), id_produk CHAR(30), username VARCHAR(30), tanggal_peminjaman DATE, tanggal_pengembalian DATE )
+BEGIN
+    UPDATE perentalan SET status_peminjaman = 'Menunggu Konfirmasi' WHERE id_rental = id_rental;
+    INSERT INTO upload_pembayaran VALUES(id_produk, username, tanggal_peminjaman, tanggal_pengembalian, bukti_pembayaran, id_rental);
+END$$
+DELIMITER ;
+
 DELIMITER $$
 CREATE PROCEDURE rental_produk(jumlah INT, tanggal_peminjaman DATE, tanggal_pengembalian DATE, idproduk CHAR(30), username VARCHAR(30))
 BEGIN
-    INSERT INTO perentalan VALUES(tanggal_peminjaman, tanggal_pengembalian, idproduk, jumlah, username, 'Belum Dikonfirmasi');
+    INSERT INTO perentalan VALUES(tanggal_peminjaman, tanggal_pengembalian, idproduk, jumlah, username, 'Belum Dikonfirmasi', NULL);
     UPDATE produk SET stok_produk = stok_produk - jumlah WHERE id_produk = idproduk;
 END$$
 DELIMITER ;
@@ -79,6 +109,6 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE tampilkan_riwayat(username VARCHAR(30))
 BEGIN
-    SELECT perentalan.tanggal_peminjaman, perentalan.tanggal_pengembalian, produk.nama_produk, perentalan.jumlah_produk, perentalan.status_peminjaman, produk.harga_produk, perentalan.jumlah_produk * produk.harga_produk AS total_harga FROM perentalan JOIN produk ON perentalan.id_produk = produk.id_produk WHERE username = username ORDER BY tanggal_peminjaman DESC;
+    SELECT perentalan.id_rental, perentalan.tanggal_peminjaman, perentalan.tanggal_pengembalian, produk.nama_produk, perentalan.jumlah_produk, perentalan.status_peminjaman, produk.harga_produk, perentalan.jumlah_produk * produk.harga_produk AS total_harga FROM perentalan JOIN produk ON perentalan.id_produk = produk.id_produk WHERE username = username ORDER BY tanggal_peminjaman DESC;
 END$$
 DELIMITER ;
