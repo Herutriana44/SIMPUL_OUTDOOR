@@ -12,13 +12,13 @@ class Register extends CI_Controller {
     public function index()
 	{
         $this->load->view("register");
-
     }
 
 
     // Ini fungsi untuk regristasi atau menambahkan akun ke database
     function registration()
     {
+        error_reporting(E_ERROR | E_PARSE);
         // Ini parameter-parameter yang akan digunakan untuk enkripsi
         $cipher = "AES-128-CTR";
         $key = "skalnfkamgladmsaofaksfasmfkas";

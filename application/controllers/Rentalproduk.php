@@ -48,6 +48,7 @@ class Rentalproduk extends CI_Controller {
         $this->load->library("session");
         // panggil helper "url"
         $this->load->helper(array('url','cookie'));
+        error_reporting(E_ERROR | E_PARSE);
         $idproduk = $this->input->post('idproduk');
         $data['produk'] = $this->m_data->get_produk($idproduk);
 

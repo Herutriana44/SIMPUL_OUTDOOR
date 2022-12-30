@@ -75,4 +75,19 @@ class M_data extends CI_Model{
 
 		$this->db->query('CALL upload_bayar('.$idrental.',"'.$image.'","'.$idproduk.'","'.$username.'","'.$tanggalpeminjaman.'","'.$tanggalpengembalian.'");');
 	}
+
+	function update_data($where,$data,$table)
+	{
+		// update data
+		$this->db
+			->where
+			($where)
+			->update($table,$data);
+	}
+
+	function tampil_data()
+	{
+		// menampilkan data
+		return $this->db->get('akun');
+	}
 }
