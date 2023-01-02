@@ -424,7 +424,6 @@ error_reporting(E_ERROR | E_PARSE);
                 <div class="dropdown">
                     <button class="dropbtn">Hai, <?php echo strval($nama); ?></button>
                     <div class="dropdown-content">
-                        <a href="<?php echo site_url("Profile"); ?>">Profil</a>
                         <a href="<?php echo site_url("Dashboard/setLogout"); ?>">Logout</a>
                     </div>
                 </div>
