@@ -112,3 +112,10 @@ BEGIN
     SELECT perentalan.id_rental, perentalan.tanggal_peminjaman, perentalan.tanggal_pengembalian, produk.nama_produk, perentalan.jumlah_produk, perentalan.status_peminjaman, produk.harga_produk, perentalan.jumlah_produk * produk.harga_produk AS total_harga FROM perentalan JOIN produk ON perentalan.id_produk = produk.id_produk WHERE username = username ORDER BY tanggal_peminjaman DESC;
 END$$
 DELIMITER ;
+
+DELIMITER $$
+CREATE PROCEDURE akses_login(user VARCHAR(30), pass VARCHAR(30))
+BEGIN
+    SELECT * FROM akun WHERE username = user AND password = pass;
+END$$
+DELIMITER ;

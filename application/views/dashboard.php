@@ -14,14 +14,15 @@ error_reporting(E_ERROR | E_PARSE);
     <!-- Internal CSS -->
     <style>
         nav {
-            background-color: #FF0000;
-            height: 80px;
+            background:linear-gradient(#1374fb,#5BC0F8);
+            height: 60px;
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 10px;
             position: fixed;
+            border-radius: 0 0 10px 10px;
             top: 0;
             left: 0;
             z-index: 1;
@@ -44,77 +45,33 @@ error_reporting(E_ERROR | E_PARSE);
         }
 
         .nav-links li a {
-            color: #fff;
+            color: #ffff;
+            font-weight: 700;
             text-decoration: none;
-            font-size: 15px;
+            font-size: 20px;
             font-family: 'Poppins', sans-serif;
         }
 
         .nav-links li a:hover {
-            color: #000;
+            color: #ffffff;
         }
 
         .nav-links li button {
-            height: 80px;
-            background-color: #FF0000;
+            height: 60px;
+            background:linear-gradient(#1374fb,#5BC0F8);
             outline: none;
             width: 150px;
             transition: all 0.30s ease-in-out;
             font: 20px 'Poppins', sans-serif;
-            border: 1px solid #FF0000;
+            border-radius: 5px ;
+            border: 0;
             color: #fff;
             cursor: pointer;
         }
 
         .nav-links li button:hover {
-            background-color: #fff;
+            background-color: #5BC0F8;
             color: #FF0000;
-        }
-
-        .nav-links li button:active {
-            transform: translateY(4px);
-        }
-
-        .nav-links li button:focus {
-            outline: none;
-        }
-
-        .nav-links li button:disabled {
-            background-color: #ccc;
-            color: #fff;
-            cursor: not-allowed;
-        }
-
-        .nav-links li button:disabled:hover {
-            background-color: #ccc;
-            color: #fff;
-            cursor: not-allowed;
-        }
-
-        .nav-links li button:disabled:active {
-            transform: translateY(0px);
-        }
-
-        .nav-links li button:disabled:focus {
-            outline: none;
-        }
-
-        .nav-links li button:disabled:active {
-            transform: translateY(0px);
-        }
-
-        .nav-links li button:disabled:focus {
-            outline: none;
-        }
-
-        .nav-links li button:disabled:hover {
-            background-color: #ccc;
-            color: #fff;
-            cursor: not-allowed;
-        }
-
-        .nav-links li button:disabled:active {
-            transform: translateY(0px);
         }
 
         .container {
@@ -159,256 +116,85 @@ error_reporting(E_ERROR | E_PARSE);
         }
 
         .card-body button {
+            margin-bottom: 5px;
             height: 40px;
-            background-color: #FF0000;
+            background-color: #2C74B3;
             outline: none;
             width: 100%;
             transition: all 0.30s ease-in-out;
             font: 20px 'Poppins', sans-serif;
-            border: 1px solid #FF0000;
+            border : 0;
+            border-radius: 4px;
             color: #fff;
             cursor: pointer;
         }
 
         .card-body button:hover {
-            background-color: #fff;
-            color: #FF0000;
-        }
-
-        .card-body button:active {
-            transform: translateY(4px);
-        }
-
-        .card-body button:focus {
-            outline: none;
-        }
-
-        .card-body button:disabled {
-            background-color: #ccc;
-            color: #fff;
-            cursor: not-allowed;
-        }
-
-        .card-body button:disabled:hover {
-            background-color: #ccc;
-            color: #fff;
-            cursor: not-allowed;
-        }
-
-        .card-body button:disabled:active {
-            transform: translateY(0px);
-        }
-
-        .card-body button:disabled:focus {
-            outline: none;
-        }
-
-        .card-body button:disabled:active {
-            transform: translateY(0px);
-        }
-
-        .card-body button:disabled:focus {
-            outline: none;
-        }
-
-        .card-body button:disabled:hover {
-            background-color: #ccc;
-            color: #fff;
-            cursor: not-allowed;
-        }
-
-        .card-body button:disabled:active {
-            transform: translateY(0px);
-        }
-
-        .card-body button:disabled:focus {
-            outline: none;
-        }
-
-        .card-body button:disabled:active {
-            transform: translateY(0px);
-        }
-
-        .card-body button:disabled:focus {
-            outline: none;
-        }
-
-        .card-body button:disabled:hover {
-            background-color: #ccc;
-            color: #fff;
-            cursor: not-allowed;
-        }
-
-        .card-body button:disabled:active {
-            transform: translateY(0px);
-        }
-
-        .card-body button:disabled:focus {
-            outline: none;
-        }
-
-        .card-body button:disabled:active {
-            transform: translateY(0px);
+            background-color: #144272;
+            color: #ffffff;
         }
 
         .dropdown {
             position: relative;
             display: inline-block;
         }
-
+        .dropdown .dropbtn{
+            font-size: 15px;
+            font-weight: 600;
+        }
         .dropdown-content {
             display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
+            position:absolute;
+            border-radius: 4px;
+            background-color: #5BC0F8;
+            min-width: 100px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
+           
         }
 
-        .dropdown-content a {
-            color: black;
+        .nav-links .dropdown-content a {
+            color: #ffffff;
+            font-weight: 100;
+            font-size: 15px;
             padding: 12px 16px;
             text-decoration: none;
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
         }
 
-        .dropdown-content a:hover {background-color: #f1f1f1}
+        .dropdown-content a:hover {
+            background-color: #EB455F
+        }
 
         .dropdown:hover .dropdown-content {
             display: block;
         }
 
         .dropdown:hover .dropbtn {
-            background-color: #3e8e41;
+            background-color: #5BC0F8;
         }
 
-        .dropbtn {
-            background-color: #4CAF50;
+        .nav-links .li .dropbtn {
+            background-color: #5BC0F8;
             color: white;
             padding: 16px;
-            font-size: 16px;
+            font-size: 10px;
             border: none;
             cursor: pointer;
         }
 
         .dropbtn:hover, .dropbtn:focus {
-            background-color: #3e8e41;
-        }
-
-        .dropbtn:active {
-            transform: translateY(4px);
-        }
-
-        .dropbtn:focus {
-            outline: none;
-        }
-
-        .dropbtn:disabled {
-            background-color: #ccc;
-            color: #fff;
-            cursor: not-allowed;
-        }
-
-        .dropbtn:disabled:hover {
-            background-color: #ccc;
-            color: #fff;
-            cursor: not-allowed;
-        }
-
-        .dropbtn:disabled:active {
-            transform: translateY(0px);
-        }
-
-        .dropbtn:disabled:focus {
-            outline: none;
-        }
-
-        .dropbtn:disabled:active {
-            transform: translateY(0px);
-        }
-
-        .dropbtn:disabled:focus {
-            outline: none;
-        }
-
-        .dropbtn:disabled:hover {
-            background-color: #ccc;
-            color: #fff;
-            cursor: not-allowed;
-        }
-
-        .dropbtn:disabled:active {
-            transform: translateY(0px);
-        }
-
-        .dropbtn:disabled:focus {
-            outline: none;
-        }
-
-        .dropbtn:disabled:active {
-            transform: translateY(0px);
-        }
-
-        .dropbtn:disabled:focus {
-            outline: none;
-        }
-
-        .dropbtn:disabled:hover {
-            background-color: #ccc;
-            color: #fff;
-            cursor: not-allowed;
-        }
-
-        .dropbtn:disabled:active {
-            transform: translateY(0px);
-        }
-
-        .dropbtn:disabled:focus {
-            outline: none;
-        }
-
-        .dropdown-content a:disabled {
-            background-color: #ccc;
-            color: #fff;
-            cursor: not-allowed;
-        }
-
-        .dropdown-content a:disabled:hover {
-            background-color: #ccc;
-            color: #fff;
-            cursor: not-allowed;
-        }
-
-        .dropdown-content a:disabled:active {
-            transform: translateY(0px);
-        }
-
-        .dropdown-content a:disabled:focus {
-            outline: none;
-        }
-
-        .dropdown-content a:disabled:active {
-            transform: translateY(0px);
-        }
-
-        .dropdown-content a:disabled:focus {
-            outline: none;
-        }
-
-        .dropdown-content a:disabled:hover {
-            background-color: #ccc;
-            color: #fff;
-            cursor: not-allowed;
+            background-color: #5BC0F8;
         }
 
         #idproduk {
             display: none;
-        }
-        
+        }   
 
-    </style>
-
-    
+    </style>   
 </head>
 <body>
     <!-- Ini navbar -->
@@ -458,3 +244,5 @@ error_reporting(E_ERROR | E_PARSE);
     
 </body>
 </html>
+
+
