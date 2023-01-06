@@ -1,3 +1,8 @@
+<?php
+// matikan warning
+error_reporting(E_ERROR | E_PARSE);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +12,9 @@
     <title>Rental Produk</title>
     <!-- internal css -->
     <style>
+        body {
+            background-color: #F2F2F2;
+        }
         nav {
             background:linear-gradient(#1374fb,#5BC0F8);
             height: 60px;
@@ -67,16 +75,36 @@
             background-color: #5BC0F8;
             color: #FF0000;
         }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card {
+            background-color: #ffffff;
+            width: 90%;
+            height: 90%;
+            color : #ffffff;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
         
         .image {
             float:left;
+            padding-left: 20px;
+            margin-top: 20px;
+            padding-top: 50px;
             width:30%;
             background:#ffffff;
         }
 
         .description {
             float:right;
-            width:70%;
+            margin-top: 20px;
+            padding-top: 50px;
+            width:60%;
             background:#ffffff;
         }
 
@@ -89,17 +117,17 @@
             color : #2C74B3;
             margin : 3px;
         } 
+        .jumlah {
+            color : black;
+            font-size: 20px;
 
-        .description .inputidproduk {
-            font-size: 16px;
-            border-radius: 4px ;
         }
-        
         .btn-rental{
             height: 35px;
+            margin-top: 7px;
             background-color: #2C74B3;
             outline: none;
-            width: 200px;
+            width: 300px;
             transition: all 0.30s ease-in-out;
             font: 15px 'Poppins', sans-serif;
             font-weight: 600;
@@ -124,22 +152,13 @@
         <ul class="nav-links">
             <li><button><a href="<?php echo site_url("Dashboard"); ?>">Dashboard</a></button></li>
             <li><button><a href="<?php echo site_url("Riwayat"); ?>">Riwayat</a></button></li>
-            <li>
-            <a href="<?php echo site_url("Dashboard/setLogout"); ?>">Logout</a>
-                <!-- Dropdown akun -->
-                <!-- <div class="dropdown">
-                    <button class="dropbtn">Hai, <?php echo strval($nama); ?></button>
-                    <div class="dropdown-content">
-                        <a href="<?php echo site_url("Dashboard/setLogout"); ?>">Logout</a>
-                    </div>
-                </div> -->
-            </li>
+            <li><button><a href="<?php echo site_url("Dashboard/setLogout"); ?>">Logout</a></button></li>
         </ul>
     </nav>
     <!-- detail produk dengan for-->
     <?php foreach($produk as $p){ ?>
-    <!-- <div class="container">
-        <div class="row"> -->
+    <div class="container">
+        <div class="card"> 
             <div class="image">
                 <img src="<?php echo asset_url();?>produk/<?php echo $p->gambar_produk; ?>" alt="" width="400px">
             </div>
@@ -164,8 +183,8 @@
                     <button type="submit" class="btn-rental">Rental</button>
                 </form>
             </div>
-        <!-- </div>
-    </div> -->
+       </div>
+     </div> 
     
     <?php } ?>
     

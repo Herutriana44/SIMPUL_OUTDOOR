@@ -13,6 +13,10 @@ error_reporting(E_ERROR | E_PARSE);
     <title>Dashboard</title>
     <!-- Internal CSS -->
     <style>
+        body {
+            background-color: #F2F2F2;
+        }
+
         nav {
             background:linear-gradient(#1374fb,#5BC0F8);
             height: 60px;
@@ -79,6 +83,7 @@ error_reporting(E_ERROR | E_PARSE);
         }
 
         .card {
+            background-color: #ffffff;
             margin: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -231,7 +236,7 @@ error_reporting(E_ERROR | E_PARSE);
                                 <p><?php echo $p->harga_produk; ?></p>
                                 <p><?php echo $p->deskripsi_produk; ?></p>
                                 <input id="idproduk" name="idproduk" type="text" value="<?php echo $p->id_produk;?>">
-                                <button>Beli</button>
+                                <button>Rental</button>
                             </div>
                             </form>
                         </div>
