@@ -17,6 +17,25 @@ error_reporting(E_ERROR | E_PARSE);
             background-color: #F2F2F2;
         }
 
+        .logo{
+            font-size: 7px;
+            padding-left: 10px;
+        }
+
+        .nama_perusahaan h1{
+            font-family: 'Poppins', sans-serif;
+            color : #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nama_perusahaan h3{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color : #ffffff;
+        }
+
         nav {
             background:linear-gradient(#1374fb,#5BC0F8);
             height: 60px;
@@ -50,7 +69,7 @@ error_reporting(E_ERROR | E_PARSE);
 
         .nav-links li a {
             color: #ffff;
-            font-weight: 700;
+            font-weight: 600;
             text-decoration: none;
             font-size: 20px;
             font-family: 'Poppins', sans-serif;
@@ -205,7 +224,11 @@ error_reporting(E_ERROR | E_PARSE);
     <!-- Ini navbar -->
     <nav>
         <div class="logo">
-            <h4>Logo</h4>
+            <img src="<?php echo asset_url();?>simpul_logo.png" alt="Logo Produk"  width="45" height="45">
+        </div>
+        <div class="nama_perusahaan">
+            <h1>Simpul Outdoor</h1>
+            <h3>Rental Outdoor & Equipment</h3>
         </div>
         <ul class="nav-links">
             <li><button><a href="<?php echo site_url("Dashboard"); ?>">Dashboard</a></button></li>
