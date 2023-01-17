@@ -16,7 +16,8 @@
             <input type="text" placeholder="Nama Lengkap" id="fullname" name="fullname"/>
             <input type="text" placeholder="Alamat Lengkap" id="alamat" name="alamat"/>
             <input type="text" placeholder="Nomor Telepon" id="notlp" name="notlp"/>
-            <input type="text" placeholder="Email" id="username" name="username"/>
+            <input type="text" placeholder="Username" id="username" name="username"/>
+            <input type="text" placeholder="Email" id="email" name="email"/>
             <input type="password" placeholder="Password" id="password" name="password"/>
             <button>DAFTAR</button>
         </form>

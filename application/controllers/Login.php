@@ -27,8 +27,8 @@ class Login extends CI_Controller {
     function aksi_login(){
 		// Ini parameter-parameter yang akan digunakan untuk enkripsi
 		$cipher = "AES-128-CTR";
-		$key = "skalnfkamgladmsaofaksfasmfkas";
-		$iv = "519375018091750914109275921052194";
+        $key = "skalnfkamgladmsaofaksfasmfkas";
+        $iv = "519375018091750914109275921052194";
 
 		// Mengambil data dari input di views login
 		$username = $this->input->post('txt_username');
@@ -46,6 +46,7 @@ class Login extends CI_Controller {
 
 		// Mengecek data apakah data login tadi terdapat di database atau tidak dengan mengembalikan jumlah data yang ditemukan
 		$cek = $this->m_data->cek_login("akun",$where)->num_rows();
+		
 
 		// jika jumlah data yang ditemukan lebih dari 0 maka
 		if($cek > 0){

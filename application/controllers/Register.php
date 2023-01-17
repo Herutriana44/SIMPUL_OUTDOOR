@@ -12,13 +12,13 @@ class Register extends CI_Controller {
     public function index()
 	{
         $this->load->view("register");
-
     }
 
 
     // Ini fungsi untuk regristasi atau menambahkan akun ke database
     function registration()
     {
+        error_reporting(E_ERROR | E_PARSE);
         // Ini parameter-parameter yang akan digunakan untuk enkripsi
         $cipher = "AES-128-CTR";
         $key = "skalnfkamgladmsaofaksfasmfkas";
@@ -30,6 +30,7 @@ class Register extends CI_Controller {
         $notlp = $this->input->post('notlp');
         $username = $this->input->post('username');
 		$password = $this->input->post('password');
+        $email = $this->input->post('email');
 
         // ini untuk proses enkripsi
         $usernameChiper = openssl_encrypt($username, $cipher, $key, $options=0, $iv);
@@ -37,8 +38,9 @@ class Register extends CI_Controller {
         $alamatChiper = openssl_encrypt($alamat, $cipher, $key, $options=0, $iv);
         $notlpChiper = openssl_encrypt($notlp, $cipher, $key, $options=0, $iv);
         $nameChiper = openssl_encrypt($name, $cipher, $key, $options=0, $iv);
+        $emailChiper = openssl_encrypt($email, $cipher, $key, $options=0, $iv);
         // Ini untuk memasukkan data ke database
-        $this->m_data->register($nameChiper,$alamatChiper,$notlpChiper,$usernameChiper,$passwordChiper);
+        $this->m_data->register($nameChiper,$alamatChiper,$notlpChiper,$usernameChiper,$passwordChiper,$emailChiper);
 
         // lalu dilempar ke halaman Login Controller
         redirect('Login');
