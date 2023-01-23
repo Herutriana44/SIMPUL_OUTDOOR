@@ -16,6 +16,7 @@ class Rentalproduk extends CI_Controller {
 
     public function index()
     {
+        error_reporting(E_ERROR | E_PARSE);
         // panggil library "session"
         $this->load->library("session");
         // panggil helper "url"
@@ -73,6 +74,11 @@ class Rentalproduk extends CI_Controller {
         $iduser = $username;
         $tanggalpeminjaman = $this->input->post('tanggalpeminjaman');
         $tanggalpengembalian = $this->input->post('tanggalpengembalian');
+
+        // ubah format tanggal
+        $tanggalpeminjaman = date('Y-m-d', strtotime($tanggalpeminjaman));
+        $tanggalpengembalian = date('Y-m-d', strtotime($tanggalpengembalian));
+
         $jumlah = $this->input->post('jumlah');
         $usernameChiper = openssl_encrypt($username, $cipher, $key, $options=0, $iv);
 

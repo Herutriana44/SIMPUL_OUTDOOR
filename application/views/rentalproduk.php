@@ -30,13 +30,24 @@ error_reporting(E_ERROR | E_PARSE);
             z-index: 1;
         }
 
-        .logo {
-            color: #fff;
-            font-size: 30px;
-            font-weight: 600;
-            font-family: 'Poppins', sans-serif;
+        .logo{
+            font-size: 7px;
+            padding-left: 10px;
         }
 
+        .nama_perusahaan h1{
+            font-family: 'Poppins', sans-serif;
+            color : #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nama_perusahaan h3{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color : #ffffff;
+        }
         .nav-links {
             display: flex;
             list-style: none;
@@ -84,8 +95,9 @@ error_reporting(E_ERROR | E_PARSE);
         }
 
         .card {
+            margin-top: 80px;
             background-color: #ffffff;
-            width: 90%;
+            width: 80%;
             height: 90%;
             color : #ffffff;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -141,13 +153,26 @@ error_reporting(E_ERROR | E_PARSE);
             background-color: #144272;
             color: #ffffff;
         }
+
+        label{
+            color: black;
+            font-weight: 600;
+            }
+
+        .form-group{
+            margin-top: 6px;
+        }
     </style>
 </head>
 <body>
     <!-- Dashboard -->
 <nav>
-        <div class="logo">
-            <h4>Logo</h4>
+<div class="logo">
+            <img src="<?php echo asset_url();?>simpul_logo.png" alt="Logo Produk"  width="45" height="45">
+        </div>
+        <div class="nama_perusahaan">
+            <h1>Simpul Outdoor</h1>
+            <h3>Rental Outdoor & Equipment</h3>
         </div>
         <ul class="nav-links">
             <li><button><a href="<?php echo site_url("Dashboard"); ?>">Dashboard</a></button></li>
