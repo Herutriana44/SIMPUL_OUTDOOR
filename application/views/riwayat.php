@@ -90,66 +90,13 @@
             color: #FF0000;
         }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown .dropbtn{
-            font-size: 15px;
-            font-weight: 600;
-        }
-        .dropdown-content {
-            display: none;
-            position:absolute;
-            border-radius: 4px;
-            background-color: #5BC0F8;
-            min-width: 100px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-           
-        }
 
-        .nav-links .dropdown-content a {
-            color: #ffffff;
-            font-weight: 100;
-            font-size: 15px;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-        }
-
-        .dropdown-content a:hover {
-            background-color: #EB455F
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown:hover .dropbtn {
-            background-color: #5BC0F8;
-        }
-
-        .nav-links .li .dropbtn {
-            background-color: #5BC0F8;
-            color: white;
-            padding: 16px;
-            font-size: 10px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .dropbtn:hover, .dropbtn:focus {
-            background-color: #5BC0F8;
-        }
 
         .riwayat {
             margin-top : 90px;
             text-align: center;
         }
+
         p{
             font-size: 25px;
             font-weight: 600;
@@ -214,15 +161,7 @@
         <ul class="nav-links">
             <li><button><a href="<?php echo site_url("Dashboard"); ?>">Dashboard</a></button></li>
             <li><button><a href="<?php echo site_url("Riwayat"); ?>">Riwayat</a></button></li>
-            <li>
-                <!-- Dropdown akun -->
-                <div class="dropdown">
-                    <button class="dropbtn">Hai, <?php echo strval($nama); ?></button>
-                    <div class="dropdown-content">
-                        <a href="<?php echo site_url("Dashboard/setLogout"); ?>">Logout</a>
-                    </div>
-                </div>
-            </li>
+            <li><button><a href="<?php echo site_url("Dashboard/setLogout"); ?>">Logout</a></button></li>
         </ul>
     </nav>
 

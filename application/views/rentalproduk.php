@@ -95,8 +95,9 @@ error_reporting(E_ERROR | E_PARSE);
         }
 
         .card {
+            margin-top: 80px;
             background-color: #ffffff;
-            width: 90%;
+            width: 80%;
             height: 90%;
             color : #ffffff;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -156,8 +157,7 @@ error_reporting(E_ERROR | E_PARSE);
         label{
             color: black;
             font-weight: 600;
-            
-        }
+            }
 
         .form-group{
             margin-top: 6px;
