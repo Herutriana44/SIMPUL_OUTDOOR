@@ -101,6 +101,27 @@
             height: 90%;
             color : #ffffff;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            padding: 10px 10px;
+        }
+
+        button {
+            height: 45px;
+            width: 170px;
+            font-weight: 900;
+            color : #fff;
+            background-color: #5BC0F8;
+            border-radius: 4px;
+            border : 0;
+        }
+
+        .image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .tombol_upload {
+            display: flex;
+            justify-content: center; 
         }
     </style>
 </head>
@@ -124,11 +145,16 @@
     <div class="card"> 
     <div>
     <h2>Upload Pembayaran</h2>
+    <div class="image">
+        <img src="<?php echo asset_url();?>upload_file.webp" alt="Upload File"  width="350" height="350">
+    </div>
+    <div class="tombol_upload">
     <form action="<?php echo base_url('uploadbayar/proses') ?>" method="post" enctype="multipart/form-data" accept-charset="utf-8">
         <input type="hidden" name="id_rental" value="<?php echo $id_rental ?>">
-        <input type="file" name="bukti_pembayaran" id="bukti_pembayaran">
+        <input type="file" class="buktiBayar" name="bukti_pembayaran" id="bukti_pembayaran">
         <button type="submit" class="upload">Upload</button>
     </form>
+    </div>
     </div>
     </div>
     </div>
