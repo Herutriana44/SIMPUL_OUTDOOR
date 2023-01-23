@@ -112,6 +112,7 @@
             background-color: #5BC0F8;
             border-radius: 4px;
             border : 0;
+            cursor: pointer;
         }
 
         .image {
