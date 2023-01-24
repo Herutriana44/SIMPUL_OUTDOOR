@@ -61,6 +61,7 @@ class Dashboard extends CI_Controller {
 
 	function setSession()
 	{
+		error_reporting(E_ERROR | E_PARSE);
 		// panggil library "session"
 		$this->load->library("session");
 		// panggil helper "url"
@@ -86,6 +87,7 @@ class Dashboard extends CI_Controller {
 	}
 
 	function setLogout(){
+		error_reporting(E_ERROR | E_PARSE);
 		//panggil library session
 		$this->load->library("session");
 

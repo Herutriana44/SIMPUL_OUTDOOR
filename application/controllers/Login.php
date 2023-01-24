@@ -9,6 +9,7 @@ class Login extends CI_Controller {
 
     public function index()
 	{
+		error_reporting(E_ERROR | E_PARSE);
 		// panggil library "session"
 		$this->load->library("session");
 		// panggil helper "url"
@@ -25,6 +26,7 @@ class Login extends CI_Controller {
     }
 
     function aksi_login(){
+		error_reporting(E_ERROR | E_PARSE);
 		// Ini parameter-parameter yang akan digunakan untuk enkripsi
 		$cipher = "AES-128-CTR";
         $key = "skalnfkamgladmsaofaksfasmfkas";
